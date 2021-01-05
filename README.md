@@ -1,3 +1,3 @@
-Notesapp, a simple notes taking and sharing app.
+Notesapp, a simple notes taking and sharing app. Built using the django framework, Html, Css & Bootstrap.
 
-Run using command py manage.py runserver
+to Run program use command - py manage.py runserver
