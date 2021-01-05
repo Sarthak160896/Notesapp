@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Home  |  NotesApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-info navbar-light bg-dark">
+  
+  <ul class="navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" href="#"><h2 class="text-light">Welcome to <b>Notesapp<b></h2></a>
+	   <div><h5 class="text-light">   Create Your Notes and share with Friends.</h5>
+</div>
+    </li>
+  </ul>
+</nav>
+
+
+
+ <div class="container-fluid">
+ <div class="row">
+<div class="col-sm-2">
+<a href="{%  url 'note' %}" ><h2 class="text-success">Create Note</h2></a>
+<a href="{%  url 'check' %}"  ><h2 class="text-success">Inbox</h2></a>
+</div>
+<div class="col-sm-50">
+</div>
+
+<div class="col-sm-1">
+<a href="{%  url 'logoutuser' %}" ><h2 class="text-danger">Logout</h2></a>
+
+</div>
+</div>
+<hr>
+
+
+ 
+{% for a in datas%}
+<div class="row">
+
+	<div class="col-sm-1">
+	</div>
+  <div class="col-sm-5">
+		 
+		 <p class="text-capitalize"><b>{{a.contents}}</b>
+		 <p class="text-muted">{{a.date}}</p>
+		  <p>by --> {{a.user}}</p>
+		 
+		  
+		 
+	</div>
+		  <div class="col-sm-4">
+		  <!--<a href="{%  url 'note' %}" class="btn btn-success" style="font-weight: 900;">Add</a>-->
+		  <a href="{%  url 'edit' a.id %}" class="btn btn-warning" style="font-weight: 500;">Edit</a>
+		  <a href="{%  url 'delete' a.id %}" class="btn btn-danger" style="font-weight: 500;">Delete</a>
+		 
+		
+		  </div>
+		   <div class="col-sm-2">
+		 
+		  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Share
+    <span class="caret"></span></button>
+	  
+    <ul class="dropdown-menu">
+	{% for b in data%}
+      <center><li><a href="{%  url 'share' a.id b.name %}">{{b.name}}</a></li></center>
+	  {% endfor %}
+    </ul>
+	
+  </div>
+  </div>
+		 
+ 
+
+
+
+		  
+	
+</div>
+</div>
+<hr>
+{% endfor %}
+
+
+
+
+
+	
+	
+
+	
+
+    </form>
+	
+</div>
+
+</div>
+   
+
+
+</body>
+
+<script>
+  
+
+</script>
+
+</html>
